@@ -14,10 +14,10 @@ namespace WhereIsForward
         public WhereIsForwardApp()
         {
             app = new Application(Application.ApplicationType.Overlay);
+
             floorOverlay = new Overlay("where_is_forward", "Where Is Forward????")
             {
                 WidthInMeters = 0.1f,
-
                 Transform = new Valve.VR.HmdMatrix34_t
                 {
                     m0 = 1,
