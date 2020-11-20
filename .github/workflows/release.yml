@@ -17,7 +17,7 @@ jobs:
     - name: Install dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet publish -c Release -o build --no-restore
+      run: dotnet publish -c Release -o build -r win-x64 --no-restore
     - name: Zip build directory
       uses: montudor/action-zip@v0.1.1
       with:
