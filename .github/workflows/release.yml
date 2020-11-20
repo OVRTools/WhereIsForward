@@ -1,0 +1,29 @@
+name: Build and Release
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  build-release:
+    name: Build and Release
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.402
+    - name: Install dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet publish -c Release -o build --no-restore
+    - uses: montudor/action-zip@v0.1.1
+      with:
+        args: cd build && zip -qq -r ../WhereIsForward.zip *
+    - name: Upload binaries
+      uses: skx/github-action-publish-binaries@release-1.3
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        args: 'WhereIsForward.zip'
