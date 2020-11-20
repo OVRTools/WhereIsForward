@@ -18,4 +18,4 @@ SteamVR provides an arrow facing forward, but only when there is no Scene applic
 
 ## License
 
-MIT
+GPL 3
