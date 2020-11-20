@@ -1,5 +1,7 @@
 # Where Is Forward?
 
+![](https://user-images.githubusercontent.com/2646487/99765530-43421a80-2acd-11eb-9d02-a58aceb0f58c.png)
+
 This is a very, very, _very_ simple OpenVR overlay that literally just puts an arrow in the center of your play area that faces the front of it. No longer will you be lost in your Actual Reality while in your Virtual Reality.
 
 ## FAQ
