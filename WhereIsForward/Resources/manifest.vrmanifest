@@ -1,0 +1,16 @@
+{
+	"source": "where_is_forward",
+	"applications": [{
+		"app_key": "where_is_forward",
+		"launch_type": "binary",
+		"binary_path_windows": "..\\WhereIsForward.exe",
+		"is_dashboard_overlay": true,
+
+		"strings": {
+			"en_us": {
+				"name": "Where Is Forward?",
+				"description": "Tells you where forward is."
+			}
+		}
+	}]
+}

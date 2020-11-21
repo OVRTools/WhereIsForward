@@ -35,7 +35,7 @@ namespace WhereIsForward
                 }
             };
 
-            var overlayImagePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"Resources\arrow.png");
+            var overlayImagePath = Utils.PathToResource("arrow.png");
             floorOverlay.SetTextureFromFile(overlayImagePath);
             floorOverlay.Show();
         }

@@ -1,0 +1,2 @@
+WhereIsForward.exe --register
+pause
