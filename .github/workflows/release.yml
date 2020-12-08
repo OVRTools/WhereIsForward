@@ -17,17 +17,15 @@ jobs:
     - name: Install dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet publish -c Release -o build -r win-x64 --no-restore --no-self-contained
-    - name: Zip build directory
-      uses: montudor/action-zip@v0.1.1
-      with:
-        args: sh -c "cd build && zip -qq -r ../WhereIsForward.zip *"
+      run: dotnet publish -c Release -o build -r win-x64 --no-restore --no-self-contained /p:PublishSingleFile=true
+    - name: Move exe
+      run: cd build && mv WhereIsForward.exe ../WhereIsForward.exe
     - name: Upload binaries
       uses: skx/github-action-publish-binaries@release-1.3
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        args: 'WhereIsForward.zip'
+        args: 'WhereIsForward.exe'
 
   build-release-self-contained:
     name: Build and Release (Self-Contained)
@@ -41,14 +39,12 @@ jobs:
     - name: Install dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet publish -c Release -o build -r win-x64 --no-restore --self-contained
-    - name: Zip build directory
-      uses: montudor/action-zip@v0.1.1
-      with:
-        args: sh -c "cd build && zip -qq -r ../WhereIsForward.SelfContained.zip *"
+      run: dotnet publish -c Release -o build -r win-x64 --no-restore --self-contained /p:PublishSingleFile=true
+    - name: Rename and move exe
+      run: cd build && mv WhereIsForward.exe ../WhereIsForward.SelfContained.exe
     - name: Upload binaries
       uses: skx/github-action-publish-binaries@release-1.3
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        args: 'WhereIsForward.SelfContained.zip'
+        args: 'WhereIsForward.SelfContained.exe'
