@@ -3,6 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using System.Threading;
+using Valve.VR;
+using OVRUtils.VR_Math;
 
 namespace WhereIsForward
 {
@@ -38,11 +41,24 @@ namespace WhereIsForward
             var overlayImagePath = Utils.PathToResource("arrow.png");
             floorOverlay.SetTextureFromFile(overlayImagePath);
             floorOverlay.Show();
+
+            Thread thread = new Thread(() => PrintAngle(app));
+            thread.Start();
         }
 
         public void Shutdown()
         {
             app.Shutdown();
         }
+
+        static void PrintAngle(Application application)
+        {
+            for (;;)
+            {
+                VrMath.Debug(0, new VrMath.Vector3(0,0,0), application);
+                Thread.Sleep(100);
+            }
+        }
+        
     }
 }
