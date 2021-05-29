@@ -10,7 +10,7 @@ This is a very, very, _very_ simple OpenVR overlay that literally just puts an a
 
 [Here](https://github.com/tjhorner/WhereIsForward/releases)
 
-You might need the [.NET Core Desktop Runtime](https://download.visualstudio.microsoft.com/download/pr/1b3a8899-127a-4465-a3c2-7ce5e4feb07b/1e153ad470768baa40ed3f57e6e7a9d8/windowsdesktop-runtime-5.0.0-win-x64.exe) if you don't already have it. (Or you can download the self-contained version instead, which includes the .NET Core runtime.)
+You might need the [.NET Desktop Runtime](https://download.visualstudio.microsoft.com/download/pr/1b3a8899-127a-4465-a3c2-7ce5e4feb07b/1e153ad470768baa40ed3f57e6e7a9d8/windowsdesktop-runtime-5.0.0-win-x64.exe) if you don't already have it. (Or you can download the self-contained version instead, which includes the .NET runtime.)
 
 ### Why?
 
